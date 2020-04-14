@@ -46,7 +46,7 @@ OE_INLINE getaddrinfo_handle_t* _cast_getaddrinfo_handle(void* handle_);
 size_t _strcpy_to_utf8(
     char* ai_canonname_buf,
     size_t ai_canonname_buf_len,
-    void* ai_canonname);
+    const void* ai_canonname);
 
 int _getaddrinfo_read(
     uint64_t handle_,

@@ -62,6 +62,8 @@ int oe_getnameinfo(
     oe_socklen_t servlen,
     int flags);
 
+const char* oe_gai_strerror(int errcode);
+
 OE_EXTERNC_END
 
 #endif /* netinet/netdb.h */

@@ -248,6 +248,18 @@ done:
     return ret;
 }
 
+static const char* _hostresolver_gai_strerror(int errcode)
+{
+    /* gai_strerror is specified to return a string that does not need
+     * to be freed.
+     */
+    static char buffer[256] = {0};
+
+    oe_syscall_gai_strerror_ocall(errcode, buffer, sizeof(buffer));
+
+    return buffer;
+}
+
 static int _hostresolver_release(oe_resolver_t* resolv_)
 {
     int ret = -1;
@@ -270,6 +282,7 @@ static oe_resolver_ops_t _ops =
 {
     .getaddrinfo = _hostresolver_getaddrinfo,
     .getnameinfo = _hostresolver_getnameinfo,
+    .gai_strerror = _hostresolver_gai_strerror,
     .release = _hostresolver_release
 };
 // clang-format on

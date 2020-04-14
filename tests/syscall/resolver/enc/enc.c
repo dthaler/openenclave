@@ -194,6 +194,18 @@ int ecall_getaddrinfo(struct oe_addrinfo** res)
     return 0;
 }
 
+int ecall_gai_strerror()
+{
+    const char* message = oe_gai_strerror(OE_EAI_FAMILY);
+
+    OE_TEST(message != NULL);
+    OE_TEST(message[0] != '\0');
+
+    printf("EAI_FAMILY message is: %s\n", message);
+
+    return 0;
+}
+
 OE_SET_ENCLAVE_SGX(
     1,    /* ProductID */
     1,    /* SecurityVersion */

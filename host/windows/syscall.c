@@ -299,6 +299,22 @@ static int _do_lookup(int key, int fallback, struct tab_entry* table)
     return fallback;
 }
 
+static int _do_reverse_lookup(int val, int fallback, struct tab_entry* table)
+{
+    struct tab_entry* pent = table;
+    do
+    {
+        if (pent->val == val)
+        {
+            return pent->key;
+        }
+
+        pent++;
+    } while (pent->key != 0);
+
+    return fallback;
+}
+
 static int _winerr_to_errno(int winerr)
 {
     return _do_lookup(winerr, OE_EINVAL, winerr2errno);
@@ -312,6 +328,11 @@ static int _winsockerr_to_errno(DWORD winsockerr)
 static int _wsaerr_to_eai(DWORD winsockerr)
 {
     return _do_lookup(winsockerr, OE_EINVAL, wsa2eai);
+}
+
+static int _eai_to_wsaerr(DWORD eaierr)
+{
+    return _do_reverse_lookup(eaierr, OE_EINVAL, wsa2eai);
 }
 
 static int _musl_to_bsd(int musl_define, struct tab_entry* table)
@@ -487,7 +508,7 @@ done:
 size_t _strcpy_to_utf8(
     char* ai_canonname_buf,
     size_t ai_canonname_buf_len,
-    void* ai_canonname)
+    const void* ai_canonname)
 {
     PWSTR canonname = (PWSTR)ai_canonname;
     int buflen =
@@ -2798,6 +2819,16 @@ int oe_syscall_getnameinfo_ocall(
     }
 
     return 0;
+}
+
+void oe_syscall_gai_strerror_ocall(int errcode, char* msg, oe_socklen_t msglen)
+{
+    DWORD wsaerr = _eai_to_wsaerr(errcode);
+
+    // Get the message in UTF-16LE format.
+    PWSTR wmsg = gai_strerrorW(wsaerr);
+
+    _strcpy_to_utf8(msg, msglen, wmsg);
 }
 
 /*

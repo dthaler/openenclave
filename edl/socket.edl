@@ -232,5 +232,11 @@ enclave
             oe_socklen_t servlen,
             int flags)
             propagate_errno;
+
+        void oe_syscall_gai_strerror_ocall(
+            int errcode,
+            [out, size=msglen] char* msg,
+            oe_socklen_t msglen)
+            propagate_errno;
     };
 };

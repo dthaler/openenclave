@@ -864,7 +864,7 @@ done:
 size_t _strcpy_to_utf8(
     char* ai_canonname_buf,
     size_t ai_canonname_buf_len,
-    void* ai_canonname)
+    const void* ai_canonname)
 {
     const char* canonname = (const char*)ai_canonname;
 
@@ -944,6 +944,14 @@ int oe_syscall_getnameinfo_ocall(
     return getnameinfo(
         (const struct sockaddr*)sa, salen, host, hostlen, serv, servlen, flags);
 }
+
+void oe_syscall_gai_strerror_ocall(int errcode, char* msg, oe_socklen_t msglen)
+{
+    const char* message = gai_strerror(errcode);
+
+    _strcpy_to_utf8(msg, msglen, message);
+}
+
 /*
 **==============================================================================
 **

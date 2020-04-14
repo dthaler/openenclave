@@ -141,3 +141,19 @@ void oe_freeaddrinfo(struct oe_addrinfo* res)
         p = next;
     }
 }
+
+const char* oe_gai_strerror(int errcode)
+{
+    const char* message = NULL;
+
+    oe_spin_lock(&_lock);
+
+    if (_resolver)
+    {
+        message = (_resolver->ops->gai_strerror)(errcode);
+    }
+
+    oe_spin_unlock(&_lock);
+
+    return message;
+}

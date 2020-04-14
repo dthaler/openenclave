@@ -39,6 +39,8 @@ typedef struct _oe_resolver_ops
 
     int (*release)(oe_resolver_t* resolver);
 
+    const char* (*gai_strerror)(int errcode);
+
 } oe_resolver_ops_t;
 
 typedef struct _oe_resolver

@@ -1,4 +1,12 @@
-<link rel="stylesheet" href="css/style.css" />
+<style>
+li li{
+    list-style-type: lower-alpha;
+}
+
+li li li{
+    list-style-type: lower-roman;
+}
+</style>
 
 **Title**
 

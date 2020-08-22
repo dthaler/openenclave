@@ -1,5 +1,3 @@
-**Title**
-
 # Goal
 
 Our goal is to create three levels of nested ordered lists, with the
@@ -13,8 +11,7 @@ First, we try to use four-space indentation with ordered lists in markdown.
 
 1. Number "1"
 
-    a. Letter "a".  Notice that github renders the second level using roman
-       numerals, which is not what we want.
+    a. Letter "a".
 
     b. Letter "b"
 
@@ -22,7 +19,7 @@ First, we try to use four-space indentation with ordered lists in markdown.
 
     a. Letter "a"
 
-        i. Roman numeral "i".  Notice how this renders as a code block rather than doing a word wrap at the appropriate place.  This makes this text hard to read.
+        i. Roman numeral "i".  Notice how this renders as a code block rather than doing a word wrap at the appropriate place.  This makes this text hard to read.  But at least the number style is correct.
 
         ii. Roman numeral "ii".
 
@@ -38,7 +35,18 @@ As explained in a [stackoverflow thread[(https://stackoverflow.com/questions/519
 Github does not allow custom CSS files to modify the HTML generated from
 markdown.
 
-# Makrdown Ordered Lists
+# HTML Ordered Lists
+
+We now try embedding HTML in the Markdown, since the
+[stackoverflow thread[(https://stackoverflow.com/questions/51956361/custom-css-file-for-readme-md-in-a-github-repo)
+explains that some style can be done using this method.
+It explains:
+
+> this is documented in the [github/Markup](https://github.com/github/markup)project (specifically step 2). They used to link to the code, but they are apparently using something different now, which is not public. As per [#1246](https://github.com/github/markup/issues/124://github.com/github/markup/issues/1246) the list of allowed elements and attributes is [here](https://gist.github.com/kivikakk/622b5dcf395e26c49e2334f0eb19e6f9).
+
+The last link claims that "type" is supported on the "ol" tag, and
+the [W3C site](https://www.w3schools.com/tags/tag_ol.asp) explains
+that the "type" attribute on the "ol" tag specifies the numbering style.
 
 <ol type="A"> <!-- "a" works here -->
   <li>One

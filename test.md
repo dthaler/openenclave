@@ -57,40 +57,31 @@ Let's start with the top level being type "A":
       <li>This should be numbered "b".</li>
     </ol>
   </li>
-  <li>This should be numbered "B".  Let's try using type "I" for the following sub-bullets:
+  <li>Let's try using type "I" for the following sub-bullets:
     <ol type="I">
-      <li>This should be numbered "I".</li>
-      <li>This should be numbered "II".</li>
-  </ol>
+      <li>This should be numbered "I", but it's instead forced to use lower case.</li>
+      <li>This should be numbered "II", but it's instead forced to use lower case.</li>
+    </ol>
+  </li>
+  <li>Let's try using type "a" for the following sub-bullets:
+    <ol type="a">
+      <li>This should be numbered "a", but it's instead forced to use lower case.</li>
+      <li>This should be numbered "b", but it's instead forced to use lower case.</li>
+    </ol>
   </li>
   <li>Let's try using type "1" for the following sub-bullets:
     <ol type="1">
-      <li>This should be numbered "1".
-        <ol type="I">
-          <li>Uno</li>
-          <li>Dos</li>
+      <li>This should be numbered "1", but it's instead forced to use roman numberals. </li>
+      <li>Finally, let's try changing the style of the third level.  We'll start with trying roman numerals:
+        <ol type="i">
+          <li>This should be numbered "i".</li>
+          <li>This should be numbered "ii".</li>
         </ol>
       </li>
-      <li>This should be numbered "2".
-        <ol type="i">
-          <li>Uno</li>
-          <li>Dos</li>
-        </ol>
-      </li>
-    </ol>
-  </li>
-  <li>Four
-    <ol type="a">
-      <li>Alpha
-        <ol type="i">
-          <li>Uno</li>
-          <li>Dos</li>
-        </ol>
-      </li>
-      <li>Bravo
-        <ol type="i">
-          <li>Uno</li>
-          <li>Dos</li>
+      <li>Also try numerals ("1"):
+        <ol type="1">
+          <li>This should be numbered "1".</li>
+          <li>This should be numbered "2".</li>
         </ol>
       </li>
     </ol>

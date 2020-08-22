@@ -48,34 +48,30 @@ The last link claims that "type" is supported on the "ol" tag, and
 the [W3C site](https://www.w3schools.com/tags/tag_ol.asp) explains
 that the "type" attribute on the "ol" tag specifies the numbering style.
 
-<ol type="A"> <!-- "a" works here -->
-  <li>One
+Let's start with the top level being type "A":
+
+<ol type="A">
+  <li>This should be numbered "A".  Yes this works!
     <ol type="a"> <!-- this is forced to roman, "1" doesn't work -->
-      <li>This is the first sub-bullet.</li>
-      <li>This is the second sub-bullet.</li>
+      <li>This should be numbered "a", but notice how it is instead forced to roman numerals.</li>
+      <li>This should be numbered "b".</li>
     </ol>
   </li>
-  <li>Two
-    <ol type="i">
-      <li>This is the first sub-bullet.</li>
-      <li>This is the second sub-bullet.</li>
+  <li>This should be numbered "B".  Let's try using type "I" for the following sub-bullets:
+    <ol type="I">
+      <li>This should be numbered "I".</li>
+      <li>This should be numbered "II".</li>
   </ol>
   </li>
-  <li>Three
-    <ol type="A">
-      <li>Alpha
+  <li>Let's try using type "1" for the following sub-bullets:
+    <ol type="1">
+      <li>This should be numbered "1".
         <ol type="I">
           <li>Uno</li>
           <li>Dos</li>
         </ol>
       </li>
-      <li>Bravo
-        <ol type="i">
-          <li>Uno</li>
-          <li>Dos</li>
-        </ol>
-      </li>
-      <li>Charlie
+      <li>This should be numbered "2".
         <ol type="i">
           <li>Uno</li>
           <li>Dos</li>

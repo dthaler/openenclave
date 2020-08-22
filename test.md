@@ -1,52 +1,94 @@
-<style>
-li li{
-    list-style-type: lower-alpha;
-}
-
-li li li{
-    list-style-type: lower-roman;
-}
-</style>
-
 **Title**
 
-1. One
-    a. This line is considered to be a continuation of the previous line.
+# Goal
 
-    b. This is the first sub-bullet.
+Our goal is to create three levels of nested ordered lists, with the
+top level using the numeric style ("1"), the second level using the
+alphabetic style ("a"), and the third level using the roman numeral
+style ("i").
 
-2. Two
+# Makrdown Ordered Lists
 
-    a. This is the first sub-bullet.
+First, we try to use four-space indentation with ordered lists in markdown.
 
-    b. This is the second sub-bullet.
+1. Number "1"
 
-3. Three
+    a. Letter "a".  Notice that github renders the second level using roman
+       numerals, which is not what we want.
 
-    a. Alpha
-        i. This line is considered to be a continuation of the previous line.
-        ii. This line is also considered to be a continuation of the previous line.
+    b. Letter "b"
 
-    b. Bravo
-        i. This line is considered to be a continuation of the previous line.
+2. Number "2"
 
-        ii. This is the first sub-bullet.
+    a. Letter "a"
 
-    c. Charlie
+        i. Roman numeral "i".  Notice how this renders as a code block rather than doing a word wrap at the appropriate place.  This makes this text hard to read.
 
-        i. Uno
+        ii. Roman numeral "ii".
 
-        ii. Dos
+    b. Letter "b"
 
-4. Four
+        i. Roman numeral "i".
 
-    1. Alpha
+        ii. Roman numeral "ii".
 
-        1. Uno
+# CSS Styles for Github-Generated HTML
 
-        2. Dos
+As explained in a [stackoverflow thread[(https://stackoverflow.com/questions/51956361/custom-css-file-for-readme-md-in-a-github-repo),
+Github does not allow custom CSS files to modify the HTML generated from
+markdown.
 
-    <li>Bravo
-        <li>Uno</li>
-        <li>Dos</li>
-    </li>
+# Makrdown Ordered Lists
+
+<ol type="A"> <!-- "a" works here -->
+  <li>One
+    <ol type="a"> <!-- this is forced to roman, "1" doesn't work -->
+      <li>This is the first sub-bullet.</li>
+      <li>This is the second sub-bullet.</li>
+    </ol>
+  </li>
+  <li>Two
+    <ol type="i">
+      <li>This is the first sub-bullet.</li>
+      <li>This is the second sub-bullet.</li>
+  </ol>
+  </li>
+  <li>Three
+    <ol type="A">
+      <li>Alpha
+        <ol type="I">
+          <li>Uno</li>
+          <li>Dos</li>
+        </ol>
+      </li>
+      <li>Bravo
+        <ol type="i">
+          <li>Uno</li>
+          <li>Dos</li>
+        </ol>
+      </li>
+      <li>Charlie
+        <ol type="i">
+          <li>Uno</li>
+          <li>Dos</li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li>Four
+    <ol type="a">
+      <li>Alpha
+        <ol type="i">
+          <li>Uno</li>
+          <li>Dos</li>
+        </ol>
+      </li>
+      <li>Bravo
+        <ol type="i">
+          <li>Uno</li>
+          <li>Dos</li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>

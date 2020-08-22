@@ -54,9 +54,9 @@ This charter (the "Charter") sets forth the responsibilities and procedures for 
 
     a. While the Project aims to operate as a consensus-based community, if any CGC decision requires a vote to move the Project forward, the voting members of the CGC will vote on a one vote per voting member basis.
 
-    b. Quorum for CGC meetings requires at least fifty percent of all voting members of the CGC to be present. The CGC may continue to meet if quorum is not met but will be prevented from making any decisions at the meeting.
+    b. Quorum for CGC meetings requires at least two-thirds of all voting members of the CGC to be present. The CGC may continue to meet if quorum is not met but will be prevented from making any decisions at the meeting.
 
-    c. Except as provided in Section 7.c. and 8.a, decisions by vote at a meeting require a majority vote of those in attendance, provided quorum is met. Decisions made by electronic vote without a meeting require a majority vote of all voting members of the CGC.
+    c. Except as provided in Section 7.c. and 8.a, all decisions by vote require a super-majority (two-thirds) vote of all voting members of the CGC.
 
     d. In the event a vote cannot be resolved by the CGC, any voting member of the CGC may refer the matter to the Series Manager for assistance in reaching a resolution.
 

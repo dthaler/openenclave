@@ -8,6 +8,16 @@ style ("i").
 Among any ways to meet the above requirement, we also want it to display
 as nicely as if it were HTML or PDF.
 
+# Simon's test
+
+1. Number "1"
+
+a. Letter "a"
+
+b. Letter "b"
+
+2. Number "2"
+
 # Markdown Custom Lists
 
 First, we try to use four-space indentation with ordered lists in markdown.

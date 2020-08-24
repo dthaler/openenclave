@@ -16,6 +16,10 @@ a. Letter "a"
 
 b. Letter "b"
 
+i. Roman "i"
+
+ii. Roman "ii"
+
 2. Number "2"
 
 # Markdown Custom Lists
